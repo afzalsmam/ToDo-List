@@ -32,6 +32,16 @@ app.post("/", function(req, res){
   res.redirect("/");
 })
 
+app.post('/del', function(req,res){
+  if (req.body.item){
+  items.push(req.body.item);
+}
+else if(req.body.remove) {
+  items.splice(req.body.remove,1);
+}
+  res.redirect('/');
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("The server has started running on port 3000.");
 });

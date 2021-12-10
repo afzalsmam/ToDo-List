@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>A to do list</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/ea7b9d94b3.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="box" id="heading">
@@ -15,6 +16,10 @@
           <div class="item">
             <input type="checkbox">
             <p><%= newListItems[i] %></p>
+            <form action="/del" method="post">
+             <!-- <button class="remove-item" type="submit" name="submit">X</button> -->
+             <button class="remove-item" type="submit" name="remove" value="<%=i%>"><i class="far fa-trash-alt"></i></button>
+           </form>
           </div>
 
         <% } %>
