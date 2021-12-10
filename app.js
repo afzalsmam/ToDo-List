@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+
 var items = ["exercise", "shower", "eat breakfast"];
 
 app.get("/", function(req, res){
@@ -31,6 +32,6 @@ app.post("/", function(req, res){
   res.redirect("/");
 })
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("The server has started running on port 3000.");
 });
