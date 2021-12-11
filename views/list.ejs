@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>A to do list</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/ea7b9d94b3.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
+<%- include("header") -%>
     <div class="box" id="heading">
-      <h1><%= kindOfDay %></h1>
+      <h1><%= listTitle %></h1>
     </div>
 
     <div class="box">
@@ -25,11 +17,9 @@
         <% } %>
 
             <form class="item" action="/" method="post">
-              <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-          <button type="submit" name="button">+</button>
+              <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
+          <button type="submit" name="button" value="<%= listTitle %>">+</button>
         </form>
     </div>
 
-
-  </body>
-</html>
+    <%- include("footer") -%>
